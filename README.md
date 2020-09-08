@@ -22,7 +22,7 @@ This code is based on Pytorch and is tested on Linux Distributions (Ubuntu 16.04
 - matplotlib
 We recommend Anaconda and provide a conda environment setup file including the above dependencies. Please create the environment ```polar``` by running:
 ```
-	conda env create -f env.yaml
+	conda env create -f env.yml
 ```
 
 Pretrained models and dataset
