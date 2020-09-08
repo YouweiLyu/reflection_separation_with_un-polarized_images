@@ -128,8 +128,9 @@ class Logger(object):
 
     def saveSplit(self, res, save_prefix):
         n, c, h, w = res.shape
+        name_list = ['unpol', 'pol', 'r_gt', 'b_gt', 'r_out', 'b_out']
         for i in range(n):
-            vutils.save_image(res[i], save_prefix + '_%d.png' % (i))
+            vutils.save_image(res[i], save_prefix + '_%s.png' % (name_list[i]))
 
     def saveImgResults(self, results, split, epoch, iters, nrow, gray=False, error=''):
         max_save_n = nrow

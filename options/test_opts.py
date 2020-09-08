@@ -10,7 +10,7 @@ class TestOpts(object):
     def initialize(self):
         #### Test Dataset ####
         self.parser.add_argument('--dataset_test',  default='data_loader')
-        self.parser.add_argument('--data_dir_val',  default='./data/syn/')
+        self.parser.add_argument('--data_dir_val',  default='data/sync/')
         self.parser.add_argument('--grayscale',     default=False, action='store_true')
         self.parser.add_argument('--resume',        default=None)
         self.parser.add_argument('--val_batch',     default=1,       type=int)
@@ -24,14 +24,14 @@ class TestOpts(object):
         self.parser.add_argument('--seed',        default=0,     type=int)
 
         #### Stage 1 Model Arguments ####
-        self.parser.add_argument('--pretrain_est',default='./model/est.pth.tar')
+        self.parser.add_argument('--pretrain_est',default='data/sync/est.pth.tar')
         self.parser.add_argument('--resume_ref',  default=None)
         self.parser.add_argument('--num_para',    default=2,     type=int)
         self.parser.add_argument('--fc_height',   default=256,   type=int)
         self.parser.add_argument('--fc_width',    default=256,   type=int)
 
         #### Stage 2 Model Arguments ####
-        self.parser.add_argument('--pretrain_ref', default='./model/ref.pth.tar')
+        self.parser.add_argument('--pretrain_ref', default='data/sync/ref.pth.tar')
         self.parser.add_argument('--resume_est',   default=None)
         self.parser.add_argument('--fg_gradient',  default=True,  action='store_false')
         self.parser.add_argument('--use_BN',       default=True,  action='store_false')
@@ -58,7 +58,7 @@ class TestOpts(object):
         self.parser.add_argument('--suffix',     default=None)
         self.parser.add_argument('--debug',      default=False, action='store_true')
         self.parser.add_argument('--make_dir',   default=True,  action='store_false')
-        self.parser.add_argument('--save_split', default=False, action='store_true')
+        self.parser.add_argument('--save_split', default=True,  action='store_false')
 
     def setDefault(self):
         if self.args.debug:
